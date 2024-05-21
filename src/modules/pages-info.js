@@ -33,7 +33,7 @@ export class pageOption extends LitElement{
     .card{
         font-size: 5vw;
         text-align:center;
-        padding:5%
+        padding:2.5%
     }
     .card:hover{
         background-color: rgba(48, 48, 48, 0.814);
