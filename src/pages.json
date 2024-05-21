@@ -43,6 +43,18 @@
             "price": 1000000
         }
     },
+    "page-2.1": {
+        "2.1.1": {
+            "url": "src/imgs/answer-2_1-1.png",
+            "txt": "Single page app",
+            "price": 1000000
+        },
+        "2.1.2": {
+            "url": "src/imgs/answer-2_1-2.png",
+            "txt": "Native app",
+            "price": 1000000
+        }
+    },
     "page-3": {
         "3.1": {
             "url": "src/imgs/answer-3-1.png",
