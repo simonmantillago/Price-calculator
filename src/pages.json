@@ -49,6 +49,7 @@
             "txt": "Single page app",
             "price": 1000000
         },
+        
         "2.1.2": {
             "url": "src/imgs/answer-2_1-2.png",
             "txt": "Native app",
