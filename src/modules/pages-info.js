@@ -55,11 +55,11 @@ export class pageOption extends LitElement{
         let pageData=data[this.page]; // se define el page data con la info de solo la pagina que se necesita 
         return html`
             <div class="cards-container" >
-            ${Object.values(pageData).map(item => html`    
-                <div class="card">
+            ${Object.entries(pageData).map(([key, item]) => html`    
+                <a class="card" id="${key}">
                     <img src="../${item.url}" alt="picture">
                     <p style="color:white;">${item.txt}</p>
-                </div>
+                </a>
             `)}
             </div>`
     } //itera con el map para todas las opciones que hay dentro de page y realiza una card por cada una
