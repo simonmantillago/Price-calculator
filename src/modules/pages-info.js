@@ -16,11 +16,11 @@ export class pageOption extends LitElement{
     //estilos de cada web component
     static styles = css` 
     img{
-        width:100%
+        width:70%   
     }
     .cards-container{
-        padding:5%;
-        width:100%;
+        padding-top:30px;
+        width:70vw;
     }
     .cards-container,.card{
         display:flex;
@@ -45,7 +45,7 @@ export class pageOption extends LitElement{
             justify-content:center;
         }
         .card{
-            font-size: clamp(1em,2.5vw,1.5em);
+            font-size: clamp(1em,2.5vw,1.2em);
         }
         
     }

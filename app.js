@@ -1,0 +1,1 @@
+import '/src/modules/pages-info.js'

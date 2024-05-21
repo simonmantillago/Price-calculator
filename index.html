@@ -6,24 +6,130 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + Lit</title>
     <link rel="stylesheet" href="./src/index.css" />
-    <script type="module" src="/src/my-element.js"></script>
-    <script defer type="module" src="/src/modules/pages-info.js"></script>
+    <script defer type="module" src="app.js"></script>
   </head>
   <body>
     <div class="container">
-      <!-- <section class="intro">
+      <section class="intro">
         <img class="intro-image" src="src/imgs/intro.png" alt="">
         <h1 class="title">How much does it cost to develop my <strong>app</strong>?</h1>
         <p class="subtitle">Calculate the cost to create your app by answering these simple questions.</p>
         <button class="start-button">Start</button>
-      </section> -->
+      </section>
+    
       <section class="page-1 pagina">
-        <span class="pageNum">1/10</span>
+        <span class="pageNum num1">1/10</span>
         <h2 class="pageTitle">What level of quality are you looking for?</h2>
         <div class="options">
-          <page-option></page-option>
-          <page-option></page-option>
-          <page-option></page-option>
+          <page-option page="page-1"></page-option>
+        </div>
+      </section>
+    
+      <section class="page-2 pagina">
+        <div class="top-line">
+          <span class="return-page">← Go back</span>
+          <span class="pageNum">2/10</span>
+          <span class="price-counter">2900000</span>
+        </div>
+        <h2 class="pageTitle">What type of App do you need?</h2>
+        <div class="options">
+          <page-option page="page-2"></page-option>
+        </div>
+      </section>
+    
+      <section class="page-3 pagina">
+        <div class="top-line">
+          <span class="return-page">← Go back</span>
+          <span class="pageNum">3/10</span>
+          <span class="price-counter">2900000</span>
+        </div>
+        <h2 class="pageTitle">What design do you want your App to have?</h2>
+        <div class="options">
+          <page-option page="page-3"></page-option>
+        </div>
+      </section>
+    
+      <section class="page-4 pagina">
+        <div class="top-line">
+          <span class="return-page">← Go back</span>
+          <span class="pageNum">4/10</span>
+          <span class="price-counter">2900000</span>
+        </div>
+        <h2 class="pageTitle">How do you want to benefit from your App?</h2>
+        <div class="options">
+          <page-option page="page-4"></page-option>
+        </div>
+      </section>
+    
+      <section class="page-5 pagina">
+        <div class="top-line">
+          <span class="return-page">← Go back</span>
+          <span class="pageNum">5/10</span>
+          <span class="price-counter">2900000</span>
+        </div>
+        <h2 class="pageTitle">Does your App need a login system?</h2>
+        <div class="options">
+          <page-option page="page-5"></page-option>
+        </div>
+      </section>
+    
+      <section class="page-6 pagina">
+        <div class="top-line">
+          <span class="return-page">← Go back</span>
+          <span class="pageNum">6/10</span>
+          <span class="price-counter">2900000</span>
+        </div>
+        <h2 class="pageTitle">Does your App have to be integrated with a website?</h2>
+        <div class="options">
+          <page-option page="page-6"></page-option>
+        </div>
+      </section>
+    
+      <section class="page-7 pagina">
+        <div class="top-line">
+          <span class="return-page">← Go back</span>
+          <span class="pageNum">7/10</span>
+          <span class="price-counter">2900000</span>
+        </div>
+        <h2 class="pageTitle">Do users have their own profiles?</h2>
+        <div class="options">
+          <page-option page="page-7"></page-option>
+        </div>
+      </section>
+    
+      <section class="page-8 pagina">
+        <div class="top-line">
+          <span class="return-page">← Go back</span>
+          <span class="pageNum">8/10</span>
+          <span class="price-counter">2900000</span>
+        </div>
+        <h2 class="pageTitle">Does your app need an administration panel?</h2>
+        <div class="options">
+          <page-option page="page-8"></page-option>
+        </div>
+      </section>
+    
+      <section class="page-9 pagina">
+        <div class="top-line">
+          <span class="return-page">← Go back</span>
+          <span class="pageNum">9/10</span>
+          <span class="price-counter">2900000</span>
+        </div>
+        <h2 class="pageTitle">What languages ​​will your app use?</h2>
+        <div class="options">
+          <page-option page="page-9"></page-option>
+        </div>
+      </section>
+    
+      <section class="page-10 pagina">
+        <div class="top-line">
+          <span class="return-page">← Go back</span>
+          <span class="pageNum">10/10</span>
+          <span class="price-counter">2900000</span>
+        </div>
+        <h2 class="pageTitle">What status is your project in?</h2>
+        <div class="options">
+          <page-option page="page-10"></page-option>
         </div>
       </section>
     </div>
