@@ -8,7 +8,7 @@ export class pageOption extends LitElement {
         super();
         this.page = 'page-1'; // Inicializa la propiedad name
         this.pageData={};
-        this.pageAtributes=[]
+        this.pageAtributes=[];
         this.Totalprice=0;
     };
     //estilos de cada web component
@@ -174,6 +174,7 @@ export class pageOption extends LitElement {
             this.page=`page-${this.pageData['num']-1}`
         }
         this.requestUpdate();
+        console.log(this.pageAtributes)
     }
 
     

@@ -50,7 +50,7 @@
             "2.5": {
                 "url": "src/imgs/answer-2-5.png",
                 "txt": "Desktop app",
-                "price": 1000000
+                "price": 0
             }
         }
     },
