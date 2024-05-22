@@ -1,8 +1,6 @@
 import data from '../pages.json';
 import { LitElement, css, html } from 'lit';
 
-
-
 export class pageOption extends LitElement {
 
 
@@ -10,6 +8,7 @@ export class pageOption extends LitElement {
         super();
         this.page = 'page-1'; // Inicializa la propiedad name
         this.pageData={};
+        this.price=0;
     };
     //estilos de cada web component
     static styles = css` 
@@ -22,11 +21,12 @@ export class pageOption extends LitElement {
         display:flex;
         flex-wrap:wrap;
         justify-content:center;
-        aling-item:center
+        aling-item:center;
+        gap:5px;
     }
     .card{
         display:flex;
-        width:160px;
+        width:155px;
         flex-direction: column;
         align-items: center;
         justify-content: center;
@@ -92,7 +92,7 @@ export class pageOption extends LitElement {
                 <div class="top-line">
                     <span class="return-page">← Go back</span>
                     <span class="pageNum">${this.pageData['num']}/10</span>
-                    <span class="price-counter">2900000</span>
+                    <span class="price-counter">${this.price}</span>
                 </div>
                 <h2 class="pageTitle">${this.pageData['title']}</h2>
                 <div class="options">
@@ -108,23 +108,33 @@ export class pageOption extends LitElement {
             </section>`
     } //itera con el map para todas las opciones que hay dentro de page y realiza una card por cada una
 
-    firstUpdated() { //la funcion firstUpdated escucha todos los botones
-        const cards = this.shadowRoot.querySelectorAll('.card'); // primero lee todas las cartas
-        cards.forEach(card => { // itera dentro de todas las cartas
-            card.addEventListener('click', () => { // escucha el click en la carta
-            this.nextbutton(); // ejecuta la funcion nextButton
+    firstUpdated() { //la funcion firstUpdated carga primero el web componen para luego poder escuchar eventos
+        const cardsContainer = this.shadowRoot.querySelector('.cards-container'); // se define el contenedor de las cartas
+        cardsContainer.addEventListener('click', (e) => {; // se escucha si dentro de ese contenedor se realizo click
+            const card = e.target.closest('.card');// escucha el click de ese elemento .target y lee la carta mas cercana por eso el .closest
+                if (card.id === "2.5") { // Comprueba si el ID de la carta es "2.5"
+                    this.nextbuttonexception(); // Si es "2.5", llama a nextbuttonexception
+                } else {
+                    this.nextbutton(); // Si no es "2.5", llama a nextbutton
+                }
             });
-        })
+        
         const back = this.shadowRoot.querySelector('.return-page'); 
         // igual que la anterior pero con el boton return, solo que en este caso solo hay un boton y no es necesario iterar
         back.addEventListener('click',(e)=>{
             this.backButton();
         })    
     };
+    nextbuttonexception(){
+        this.page="page-2.1";// al ser un caso particular, esta funcion llama solo a la pagina 2.1
+
+        this.requestUpdate(); // refresca el webcomponent con el nuevo this.page
+    }
     nextbutton(){
-        if(this.page===`page-10`){} // empieza en la ultima pagina por que despues de esta no hay mas
+        if(this.page===`page-10`){}
+         // empieza en la ultima pagina por que despues de esta no hay mas
         else{// lee el numero de pagina en la que se esta y le agrega uno 
-            this.page=`page-${this.pageData['num']+1}`//
+            this.page=`page-${Math.floor(this.pageData['num']+1)}` //se hace uso del math.floor por que en el caso de ser la pagina 2.1 al sumarle 1 necesitamos que quede en 3
         }
         this.requestUpdate(); // refresca el webcomponent con el nuevo this.page
     
@@ -136,7 +146,7 @@ export class pageOption extends LitElement {
             // dice que en el padre de este web component agregue un html antes de que se termine el padre con el texto de la constante antes definida
             this.parentNode.removeChild(this); // dice que se debe eliminar este web component del padre 
         }
-        else if (this.page===`page-${this.pageData['num']}`){// resta uno al this.page para devolver la pagina
+        else {// resta uno al this.page para devolver la pagina
             this.page=`page-${this.pageData['num']-1}`
         }
         this.requestUpdate();
