@@ -6,26 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + Lit</title>
     <link rel="stylesheet" href="./src/index.css" />
-    <script type="module" src="/src/my-element.js"></script>
-    <script defer type="module" src="/src/modules/pages-info.js"></script>
+    <script defer type="module" src="app.js"></script>
   </head>
   <body>
     <div class="container">
-      <!-- <section class="intro">
-        <img class="intro-image" src="src/imgs/intro.png" alt="">
-        <h1 class="title">How much does it cost to develop my <strong>app</strong>?</h1>
-        <p class="subtitle">Calculate the cost to create your app by answering these simple questions.</p>
-        <button class="start-button">Start</button>
-      </section> -->
-      <section class="page-1 pagina">
-        <span class="pageNum">1/10</span>
-        <h2 class="pageTitle">What level of quality are you looking for?</h2>
-        <div class="options">
-          <page-option></page-option>
-          <page-option></page-option>
-          <page-option></page-option>
-        </div>
-      </section>
-    </div>
+      <page-intro></page-intro>
+      
   </body>
 </html>
