@@ -6,17 +6,20 @@
             "1.1": {
                 "url": "src/imgs/answer-1-1.png",
                 "txt": "Optimal quality",
-                "price": 1000000
+                "price": 0,
+                "multiplier":3
             },
             "1.2": {
                 "url": "src/imgs/answer-1-2.png",
                 "txt": "Good value for money",
-                "price": 1000000
+                "price": 0,
+                "multiplier":2
             },
             "1.3": {
                 "url": "src/imgs/answer-1-3.png",
                 "txt": "The quality doesn't matter",
-                "price": 1000000
+                "price": 0,
+                "multiplier":1
             }
         }
     },
