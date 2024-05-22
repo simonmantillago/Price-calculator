@@ -1,17 +1,14 @@
 import data from '../pages.json';
 import { LitElement, css, html } from 'lit';
 
-
-
-export class pageOption extends LitElement{
+export class pageOption extends LitElement {
 
 
     constructor() {
         super();
-        this.page = ''; // Inicializa la propiedad name
-    };
-    static properties = {
-        page: { type: String } // lee la propiedad page que se pone en el web component
+        this.page = 'page-1'; // Inicializa la propiedad name
+        this.pageData={};
+        this.price=0;
     };
     //estilos de cada web component
     static styles = css` 
@@ -21,24 +18,57 @@ export class pageOption extends LitElement{
     .cards-container{
         padding-top:30px;
         width:70vw;
-    }
-    .cards-container,.card{
         display:flex;
+        flex-wrap:wrap;
+        justify-content:center;
+        aling-item:center;
+        gap:5px;
+    }
+    .card{
+        display:flex;
+        width:155px;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         gap:20px;
-        transition: transform 0.3s ease;
-    }
-    .card{
         font-size: 5vw;
         text-align:center;
-        padding:2.5%
+        padding:2.5%;
+        transition: transform 0.3s ease;
     }
     .card:hover{
         background-color: rgba(48, 48, 48, 0.814);
         transform: translateY(-10px);
     }
+
+    .pageTitle{
+        padding-top: 40px;
+        font-size: 2.1em;
+    }
+    .top-line{ 
+    display: flex;
+    padding-top: 30px;
+    font-weight: bold;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline:30px ;
+    }
+    .return-page{
+    font-weight: 400
+    }
+    .pagina{
+    display: flex;
+    flex-direction: column;
+    }
+    .options{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    }
+    .num1{
+    font-weight: bold;
+    }
+
     @media (min-width:600px) {
         .cards-container{
             flex-direction: row;
@@ -47,21 +77,82 @@ export class pageOption extends LitElement{
         .card{
             font-size: clamp(1em,2.5vw,1.2em);
         }
+        .pageTitle{
+            padding-top: 150px;
+            font-size: 2em;
+        }
         
     }
     `
 
-    render(){
-        let pageData=data[this.page]; // se define el page data con la info de solo la pagina que se necesita 
+    render() { 
+        this.pageData = data[this.page]; // se define el page data con la info de solo la pagina que se necesita
         return html`
-            <div class="cards-container" >
-            ${Object.entries(pageData).map(([key, item]) => html`    
-                <a class="card" id="${key}">
-                    <img src="../${item.url}" alt="picture">
-                    <p style="color:white;">${item.txt}</p>
-                </a>
-            `)}
-            </div>`
+            <section class="${this.page} pagina">
+                <div class="top-line">
+                    <span class="return-page">← Go back</span>
+                    <span class="pageNum">${this.pageData['num']}/10</span>
+                    <span class="price-counter">${this.price}</span>
+                </div>
+                <h2 class="pageTitle">${this.pageData['title']}</h2>
+                <div class="options">
+                    <div class="cards-container" >
+                    ${Object.entries(this.pageData['options']).map(([key, item]) => html`    
+                        <a class="card" id="${key}">
+                            <img src="../${item.url}" alt="picture">
+                            <p style="color:white;">${item.txt}</p>
+                        </a>
+                    `)}
+                    </div>
+                </div>
+            </section>`
     } //itera con el map para todas las opciones que hay dentro de page y realiza una card por cada una
-}
-customElements.define("page-option",pageOption);
+
+    firstUpdated() { //la funcion firstUpdated carga primero el web componen para luego poder escuchar eventos
+        const cardsContainer = this.shadowRoot.querySelector('.cards-container'); // se define el contenedor de las cartas
+        cardsContainer.addEventListener('click', (e) => {; // se escucha si dentro de ese contenedor se realizo click
+            const card = e.target.closest('.card');// escucha el click de ese elemento .target y lee la carta mas cercana por eso el .closest
+                if (card.id === "2.5") { // Comprueba si el ID de la carta es "2.5"
+                    this.nextbuttonexception(); // Si es "2.5", llama a nextbuttonexception
+                } else {
+                    this.nextbutton(); // Si no es "2.5", llama a nextbutton
+                }
+            });
+        
+        const back = this.shadowRoot.querySelector('.return-page'); 
+        // igual que la anterior pero con el boton return, solo que en este caso solo hay un boton y no es necesario iterar
+        back.addEventListener('click',(e)=>{
+            this.backButton();
+        })    
+    };
+    nextbuttonexception(){
+        this.page="page-2.1";// al ser un caso particular, esta funcion llama solo a la pagina 2.1
+
+        this.requestUpdate(); // refresca el webcomponent con el nuevo this.page
+    }
+    nextbutton(){
+        if(this.page===`page-10`){}
+         // empieza en la ultima pagina por que despues de esta no hay mas
+        else{// lee el numero de pagina en la que se esta y le agrega uno 
+            this.page=`page-${Math.floor(this.pageData['num']+1)}` //se hace uso del math.floor por que en el caso de ser la pagina 2.1 al sumarle 1 necesitamos que quede en 3
+        }
+        this.requestUpdate(); // refresca el webcomponent con el nuevo this.page
+    
+    }
+    backButton(){
+        if(this.page===`page-1`){ // si la pagina es la primera debe regresar al intro de la pagina web
+            const introPage = `<page-intro></page-intro>`; //crea el texto que debe ponerse en el html
+            this.parentNode.insertAdjacentHTML('beforeend', introPage); 
+            // dice que en el padre de este web component agregue un html antes de que se termine el padre con el texto de la constante antes definida
+            this.parentNode.removeChild(this); // dice que se debe eliminar este web component del padre 
+        }
+        else {// resta uno al this.page para devolver la pagina
+            this.page=`page-${this.pageData['num']-1}`
+        }
+        this.requestUpdate();
+    }
+
+    
+    }
+
+customElements.define("page-option", pageOption);
