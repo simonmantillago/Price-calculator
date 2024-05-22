@@ -152,8 +152,12 @@ export class pageOption extends LitElement {
         this.requestUpdate(); // refresca el webcomponent con el nuevo this.page
     }
     nextbutton(){
-        if(this.page===`page-10`){}
-         // empieza en la ultima pagina por que despues de esta no hay mas
+        // empieza en la ultima pagina por que despues de esta no hay mas
+        if(this.page===`page-10`){
+            const pageprice=`<page-price></page-price>`; // le mando el precio como una propiedad
+            this.parentNode.insertAdjacentHTML('beforeend',pageprice);
+            this.parentNode.removeChild(this);
+        }
         else{// lee el numero de pagina en la que se esta y le agrega uno 
             this.page=`page-${Math.floor(this.pageData['num']+1)}` //se hace uso del math.floor por que en el caso de ser la pagina 2.1 al sumarle 1 necesitamos que quede en 3
         }
