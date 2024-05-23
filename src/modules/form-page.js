@@ -1,5 +1,6 @@
 import { LitElement, css, html } from 'lit';
 import data from '../pages.json';
+import { pagePrice } from './page-price';
 
 export class pageForm extends LitElement {
     // constructor(){   // funciona similar al conectedcallback pero deje el otro por que permite que pageinfo se vaya actualizando cada vez que se agregue el elemento al dom
@@ -96,6 +97,7 @@ export class pageForm extends LitElement {
                 console.error('Error al enviar POST a la API:', error);
                 // Aquí puedes manejar los errores, por ejemplo, mostrar un mensaje de error al usuario
                 }
+            this.parentNode.removeChild(this);
         })
     }
 
