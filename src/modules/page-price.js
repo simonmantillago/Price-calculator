@@ -37,7 +37,6 @@ export class pagePrice extends LitElement {
         buttonform.addEventListener('click',()=>{
             const formpage='<page-form></page-form>';
             this.parentNode.insertAdjacentHTML('beforeend',formpage);
-            this.parentNode.removeChild(this)
         })
 
     

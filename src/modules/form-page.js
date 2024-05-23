@@ -12,6 +12,7 @@ export class pageForm extends LitElement {
         const pageData=document.querySelector('page-price');
         this.price=pageData.pagePrice
         this.pageInfo=pageData.pageAtributes;
+        this.features={};
     }
     render(){
         return html`
@@ -46,22 +47,37 @@ export class pageForm extends LitElement {
         submitButton.addEventListener('click',async(event)=>{
             event.preventDefault();
             const mappedOption = this.pageInfo.map(option => option.txt);
+            const mappedPrice = this.pageInfo.map(price => price.price);
             const customerForm=this.shadowRoot.querySelector('.customerForm');
             const data = Object.fromEntries(new FormData(customerForm).entries());
             const customerData = JSON.parse(JSON.stringify(data));
             const {Name,lastName,email,country,city}=customerData;
+            for (let counter = 0; counter < mappedOption.length; counter++) {
+                this.features[mappedOption[counter]]=mappedPrice[counter] 
+            }
+            if(this.pageInfo[0].txt==="Optimal quality"){
+                this.features[mappedOption[0]]="x1"
+            }
+            else if(this.pageInfo[0].txt==="Good value for money"){
+                this.features[mappedOption[0]]="x2"
+            }
+            else if(this.pageInfo[0].txt==="The quality doesn't matter"){
+                this.features[mappedOption[0]]="x3"
+            }
+
             const customerInfo ={
                 Name:Name,
-                Lastname:lastName,
+                LastName:lastName,
                 Email:email,
                 Country:country,
                 City:city,
                 Price:this.price,
-                Features:mappedOption
+                Features:this.features
+
             }
             console.log(customerInfo)
             try {
-                const response = await fetch('PONER URL DE SIMON', { // url mock api
+                const response = await fetch('https://664b70de35bbda10987cf5f7.mockapi.io/people', { // url mock api
                     method: 'POST',
                   headers: { // se pone siempre
                     'Content-Type': 'application/json'
