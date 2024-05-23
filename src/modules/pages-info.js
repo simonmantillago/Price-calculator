@@ -83,8 +83,7 @@ export class pageOption extends LitElement {
             font-size: 2em;
         }
         
-    }
-    `
+    }`
 
     render() { 
         this.pageData = data[this.page]; // se define el page data con la info de solo la pagina que se necesita
