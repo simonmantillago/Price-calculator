@@ -1,6 +1,4 @@
 import { LitElement, css, html } from 'lit';
-import data from '../pages.json';
-import { pagePrice } from './page-price';
 
 export class pageForm extends LitElement {
     static styles =css`
@@ -15,8 +13,37 @@ export class pageForm extends LitElement {
             color: #fff !important ;   
             overflow-x: hidden;
         }
-        
-
+        .container{
+            position:absolute;
+            width:40vw;
+            height:30vh;
+            right: 30vw;
+            top:37.5vh;
+            background-color:gray;
+            border-radius:50px;
+            z-index:2;
+            display:flex;
+            justify-content:center;
+            aling-items:center;
+            
+          }
+        .customerForm{
+            width:80%;
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            aling-items:flex-start;
+        }
+          
+        .big-container{
+            position:absolute;
+            width:100vw;
+            height:100vh;
+            right: 0vw;
+            top:0vh;
+            backdrop-filter: blur(5px);
+            z-index:1;
+        }
     `
     connectedCallback(){ // funcion de lit, es como un  DOMContentLoaded pero para cuando se pone el component en el dom
         super.connectedCallback() //permite que conectedcallback() se ejecute bien antes de que se realice cualquier otra cosa, la docuemtacion de lit siempre lo pone xd
@@ -27,7 +54,9 @@ export class pageForm extends LitElement {
     }
     render(){
         return html`
-            <form class="customerForm">
+        <div class="big-container"></div>
+        <div class="container">
+            <form class="customerForm" style='width:max-content'>
                 <div class="customerName">
                     <label for="Name" class="name"><b>Name</b></label>
                     <input type="text" id="Name" name="Name">
@@ -50,10 +79,16 @@ export class pageForm extends LitElement {
                 </div>
                 <button class="submit">Submit</button>
             </form>
-    
+        </div>
     `}
 
     firstUpdated(){
+        const returnForm=this.shadowRoot.querySelector('.big-container')
+        returnForm.addEventListener('click',()=>{
+            this.parentNode.removeChild(this);
+        })
+
+
         const submitButton=this.shadowRoot.querySelector('.submit')
         submitButton.addEventListener('click',async(event)=>{
             event.preventDefault();

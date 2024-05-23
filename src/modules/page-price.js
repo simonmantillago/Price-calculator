@@ -60,7 +60,7 @@ export class pagePrice extends LitElement {
         
         .top-line{ 
             display: flex;
-            padding-top: 30px;
+            
             font-weight: 400;
             align-items: center;
             justify-content: space-between;
@@ -68,7 +68,7 @@ export class pagePrice extends LitElement {
             font-size:1vw;
             }
         .dioses{
-            width:30vw;
+            width:20vw;
             align-self:center;
         }
         
@@ -100,7 +100,7 @@ export class pagePrice extends LitElement {
         buttonAgain.addEventListener('click',()=>{
             const firstPage='<page-intro></page-intro>';
             this.parentNode.insertAdjacentHTML('beforeend',firstPage);
-            this.parentNode.removeChild(this)
+            this.parentNode.removeChild(this);
         })
         const buttonform=this.shadowRoot.querySelector('.create')
         buttonform.addEventListener('click',()=>{
