@@ -43,14 +43,14 @@ export class pageForm extends LitElement {
 
     firstUpdated(){
         const submitButton=this.shadowRoot.querySelector('.submit')
-        submitButton.addEventListener('click',(event)=>{
+        submitButton.addEventListener('click',async(event)=>{
             event.preventDefault();
             const mappedOption = this.pageInfo.map(option => option.txt);
             const customerForm=this.shadowRoot.querySelector('.customerForm');
             const data = Object.fromEntries(new FormData(customerForm).entries());
             const customerData = JSON.parse(JSON.stringify(data));
             const {Name,lastName,email,country,city}=customerData;
-            const customerInfo={
+            const customerInfo ={
                 Name:Name,
                 Lastname:lastName,
                 Email:email,
@@ -60,6 +60,26 @@ export class pageForm extends LitElement {
                 Features:mappedOption
             }
             console.log(customerInfo)
+            try {
+                const response = await fetch('PONER URL DE SIMON', { // url mock api
+                    method: 'POST',
+                  headers: { // se pone siempre
+                    'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(customerInfo)
+                });
+        
+                if (!response.ok) {
+                    throw new Error('Error al enviar POST al MockAPI');
+                }
+        
+                const responseData = await response.json();
+                console.log('Respuesta de la API:', responseData);
+                // Aquí puedes manejar la respuesta de la API, por ejemplo, mostrar un mensaje al usuario
+                } catch (error) {
+                console.error('Error al enviar POST a la API:', error);
+                // Aquí puedes manejar los errores, por ejemplo, mostrar un mensaje de error al usuario
+                }
         })
     }
 

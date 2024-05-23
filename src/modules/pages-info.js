@@ -116,7 +116,7 @@ export class pageOption extends LitElement {
             if (card.id === "2.5") { // Comprueba si el ID de la carta es "2.5"
                 this.nextbuttonexception(); // Si es "2.5", llama a nextbuttonexception
             } else {
-                this.nextbutton(); // Si no es "2.5", llama a nextbutton
+                this.nextbutton(card); // Si no es "2.5", llama a nextbutton
                 
             }
             this.pageAtributes.push(this.pageData['options'][card.id])
@@ -150,9 +150,11 @@ export class pageOption extends LitElement {
         this.page="page-2.1";// al ser un caso particular, esta funcion llama solo a la pagina 2.1
         this.requestUpdate(); // refresca el webcomponent con el nuevo this.page
     }
-    nextbutton(){
+    nextbutton(card){
         // empieza en la ultima pagina por que despues de esta no hay mas
         if(this.page===`page-10`){
+            this.pageAtributes.push(this.pageData['options'][card.id])
+            this.calcprice()
             const pageprice=`<page-price></page-price>`; // le mando el precio como una propiedad
             this.parentNode.insertAdjacentHTML('beforeend',pageprice);
             this.parentNode.removeChild(this);
