@@ -1,4 +1,5 @@
 import { LitElement, css, html } from 'lit';
+import data from '../pages.json';
 
 export class pageForm extends LitElement {
     // constructor(){   // funciona similar al conectedcallback pero deje el otro por que permite que pageinfo se vaya actualizando cada vez que se agregue el elemento al dom
@@ -9,7 +10,7 @@ export class pageForm extends LitElement {
     connectedCallback(){ // funcion de lit, es como un  DOMContentLoaded pero para cuando se pone el component en el dom
         super.connectedCallback() //permite que conectedcallback() se ejecute bien antes de que se realice cualquier otra cosa, la docuemtacion de lit siempre lo pone xd
         const pageData=document.querySelector('page-price');
-        this.price=pageData.Totalprice
+        this.price=pageData.pagePrice
         this.pageInfo=pageData.pageAtributes;
     }
     render(){
@@ -55,7 +56,7 @@ export class pageForm extends LitElement {
                 Email:email,
                 Country:country,
                 City:city,
-                Price:`${this.price} USD`,
+                Price:this.price,
                 Features:mappedOption
             }
             console.log(customerInfo)
