@@ -2,11 +2,21 @@ import { LitElement, css, html } from 'lit';
 import data from '../pages.json';
 
 export class pageForm extends LitElement {
-    // constructor(){   // funciona similar al conectedcallback pero deje el otro por que permite que pageinfo se vaya actualizando cada vez que se agregue el elemento al dom
-    //     super();
-    //     const pageData=document.querySelector('page-price');
-    //     this.pageInfo=pageData.pageAtributes;
-    // }
+    static styles =css`
+        * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        }
+        body {
+            background-color: #3d3935 !important;
+            font-family: 'Poppins' !important;
+            color: #fff !important ;   
+            overflow-x: hidden;
+        }
+        
+
+    `
     connectedCallback(){ // funcion de lit, es como un  DOMContentLoaded pero para cuando se pone el component en el dom
         super.connectedCallback() //permite que conectedcallback() se ejecute bien antes de que se realice cualquier otra cosa, la docuemtacion de lit siempre lo pone xd
         const pageData=document.querySelector('page-price');
