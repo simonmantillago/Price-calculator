@@ -4,7 +4,7 @@
         "num": 1,
         "options": {
             "1.1": {
-                "url": "src/imgs/answer-1-1.png",
+                "url": "/assets/imgs/answer-1-1.png",
                 "txt": "Optimal quality",
                 "price": 0,
                 "multiplier":3
