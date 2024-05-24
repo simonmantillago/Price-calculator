@@ -8,10 +8,11 @@ export class pageOption extends LitElement {
         super();
         this.page = 'page-1'; // Inicializa la propiedad name
         this.pageData={};
-        this.price=0;
-    };
-    //estilos de cada web component
-    static styles = css` 
+        this.pageAtributes=[];
+            this.Totalprice=0;
+        };
+        //estilos de cada web component
+        static styles = css` 
     img{
         width:70%   
     }
@@ -82,8 +83,7 @@ export class pageOption extends LitElement {
             font-size: 2em;
         }
         
-    }
-    `
+    }`
 
     render() { 
         this.pageData = data[this.page]; // se define el page data con la info de solo la pagina que se necesita
@@ -92,7 +92,7 @@ export class pageOption extends LitElement {
                 <div class="top-line">
                     <span class="return-page">← Go back</span>
                     <span class="pageNum">${this.pageData['num']}/10</span>
-                    <span class="price-counter">${this.price}</span>
+                    <span class="price-counter">${this.Totalprice} USD</span>
                 </div>
                 <h2 class="pageTitle">${this.pageData['title']}</h2>
                 <div class="options">
@@ -109,30 +109,56 @@ export class pageOption extends LitElement {
     } //itera con el map para todas las opciones que hay dentro de page y realiza una card por cada una
 
     firstUpdated() { //la funcion firstUpdated carga primero el web componen para luego poder escuchar eventos
+
         const cardsContainer = this.shadowRoot.querySelector('.cards-container'); // se define el contenedor de las cartas
         cardsContainer.addEventListener('click', (e) => {; // se escucha si dentro de ese contenedor se realizo click
             const card = e.target.closest('.card');// escucha el click de ese elemento .target y lee la carta mas cercana por eso el .closest
-                if (card.id === "2.5") { // Comprueba si el ID de la carta es "2.5"
-                    this.nextbuttonexception(); // Si es "2.5", llama a nextbuttonexception
-                } else {
-                    this.nextbutton(); // Si no es "2.5", llama a nextbutton
-                }
+            if (card.id === "2.5") { // Comprueba si el ID de la carta es "2.5"
+                this.nextbuttonexception(); // Si es "2.5", llama a nextbuttonexception
+            } else {
+                this.nextbutton(card); // Si no es "2.5", llama a nextbutton
+                
+            }
+            this.pageAtributes.push(this.pageData['options'][card.id])
+            this.calcprice()
             });
         
         const back = this.shadowRoot.querySelector('.return-page'); 
         // igual que la anterior pero con el boton return, solo que en este caso solo hay un boton y no es necesario iterar
         back.addEventListener('click',(e)=>{
             this.backButton();
+            if(this.pageAtributes.length>(this.pageData['num']-1)&&this.pageData['num']===3){ //entra solamente cuando hay mas datos en el array de los normales y estamos en la pagina 3
+            this.pageAtributes.pop() //elimina el ultimo de la lista 2 veces
+            this.pageAtributes.pop()}
+            else{
+                this.pageAtributes.pop() // solo elimina uno de la lista
+
+            }
+            this.calcprice() // llama la funcion para calcular el precio
+
         })    
     };
+    calcprice(){
+        if(this.page!=='page-1'){// si la pagina es mayor que 1 o sea que ya se selecciono el multiplicador
+        const price=this.pageAtributes.reduce((sum,item)=> sum+item['price'],0);// la funcion reduce recibe los parametros sum que se inicializa en 0 y item que es el elemento que se esta leyendo, esto lo hace con cada elemento de el array
+                this.Totalprice=price*this.pageAtributes[0]['multiplier'] // cambia el total price y lo multiplica por el multiplier que se eligio
+        }else {
+            this.price=0 // si no estamos en la pagina #1 no se tendra elegido multiplier ni precio, entonces el precio seria 0
+        }
+    }
     nextbuttonexception(){
         this.page="page-2.1";// al ser un caso particular, esta funcion llama solo a la pagina 2.1
-
         this.requestUpdate(); // refresca el webcomponent con el nuevo this.page
     }
-    nextbutton(){
-        if(this.page===`page-10`){}
-         // empieza en la ultima pagina por que despues de esta no hay mas
+    nextbutton(card){
+        // empieza en la ultima pagina por que despues de esta no hay mas
+        if(this.page===`page-10`){
+            this.pageAtributes.push(this.pageData['options'][card.id])
+            this.calcprice()
+            const pageprice=`<page-price></page-price>`; // le mando el precio como una propiedad
+            this.parentNode.insertAdjacentHTML('beforeend',pageprice);
+            this.parentNode.removeChild(this);
+        }
         else{// lee el numero de pagina en la que se esta y le agrega uno 
             this.page=`page-${Math.floor(this.pageData['num']+1)}` //se hace uso del math.floor por que en el caso de ser la pagina 2.1 al sumarle 1 necesitamos que quede en 3
         }
@@ -146,10 +172,14 @@ export class pageOption extends LitElement {
             // dice que en el padre de este web component agregue un html antes de que se termine el padre con el texto de la constante antes definida
             this.parentNode.removeChild(this); // dice que se debe eliminar este web component del padre 
         }
+        else if(this.page===`page-2.1`){
+            this.page=`page-2`
+        }
         else {// resta uno al this.page para devolver la pagina
             this.page=`page-${this.pageData['num']-1}`
         }
         this.requestUpdate();
+        console.log(this.pageAtributes)
     }
 
     
