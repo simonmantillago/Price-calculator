@@ -1,266 +1,266 @@
 {
-    "page-1": {
-        "title": "What level of quality are you looking for?",
-        "num": 1,
-        "options": {
-            "1.1": {
-                "url": "/assets/imgs/answer-1-1.png",
-                "txt": "Optimal quality",
-                "price": 0,
-                "multiplier":3
-            },
-            "1.2": {
-                "url": "src/imgs/answer-1-2.png",
-                "txt": "Good value for money",
-                "price": 0,
-                "multiplier":2
-            },
-            "1.3": {
-                "url": "src/imgs/answer-1-3.png",
-                "txt": "The quality doesn't matter",
-                "price": 0,
-                "multiplier":1
-            }
-        }
-    },
-    "page-2": {
-        "title": "What kind of app do you need?",
-        "num": 2,
-        "options": {
-            "2.1": {
-                "url": "src/imgs/answer-2-1.png",
-                "txt": "Android app",
-                "price": 1000
-            },
-            "2.2": {
-                "url": "src/imgs/answer-2-2.png",
-                "txt": "iOS application",
-                "price": 1000
-            },
-            "2.3": {
-                "url": "src/imgs/answer-2-3.png",
-                "txt": "Windows Phone app",
-                "price": 1000
-            },
-            "2.4": {
-                "url": "src/imgs/answer-2-4.png",
-                "txt": "Android app - iOS ",
-                "price": 1500
-            },
-            "2.5": {
-                "url": "src/imgs/answer-2-5.png",
-                "txt": "Desktop app",
-                "price": 0
-            }
-        }
-    },
-    "page-2.1": {
-        "title": "What kind of desktop app do you need?",
-        "num": 2.1,
-        "options": {
-            "2.1.1": {
-                "url": "src/imgs/answer-2_1-1.png",
-                "txt": "Native app",
-                "price": 1000
-            },
-            "2.1.2": {
-                "url": "src/imgs/answer-2_1-2.png",
-                "txt": "Single page app",
-                "price": 1500
-            },
-            "2.1.3": {
-                "url": "src/imgs/answer-2_1-3.png",
-                "txt": "Progressive Web App",
-                "price": 2000
-            }
-        }
-    },
-    "page-3": {
-        "title": "What design do you want your app to have?",
-        "num": 3,
-        "options": {
-            "3.1": {
-                "url": "src/imgs/answer-3-1.png",
-                "txt": "Simple interface",
-                "price": 1200
-            },
-            "3.2": {
-                "url": "src/imgs/answer-3-2.png",
-                "txt": "Customized interface",
-                "price": 2000
-            },
-            "3.3": {
-                "url": "src/imgs/answer-3-3.png",
-                "txt": "Replicated web interface",
-                "price": 1500
-            },
-            "3.4": {
-                "url": "src/imgs/answer-3-4.png",
-                "txt": "I don't need design",
-                "price": 1000
-            }
-        }
-    },
-    "page-4": {
-        "title": "How do you want to benefit from your App?",
-        "num": 4,
-        "options": {
-            "4.1": {
-                "url": "src/imgs/answer-4-1.png",
-                "txt": "Free application with advertising",
-                "price": 1000
-            },
-            "4.2": {
-                "url": "src/imgs/answer-4-2.png",
-                "txt": "Payment application",
-                "price": 1500
-            },
-            "4.3": {
-                "url": "src/imgs/answer-4-3.png",
-                "txt": "Shopping inside the app",
-                "price": 2000
-            },
-            "4.4": {
-                "url": "src/imgs/answer-4-4.png",
-                "txt": "I don't know yet",
-                "price": 1750
-            }
-        }
-    },
-    "page-5": {
-        "title": "Does your app need a login system?",
-        "num": 5,
-        "options": {
-            "5.1": {
-                "url": "src/imgs/answer-5-1.png",
-                "txt": "Yes, with social media and email",
-                "price": 2000
-            },
-            "5.2": {
-                "url": "src/imgs/answer-5-2.png",
-                "txt": "Yes, with email.",
-                "price": 1500
-            },
-            "5.3": {
-                "url": "src/imgs/answer-5-3.png",
-                "txt": "No, not",
-                "price": 0
-            },
-            "5.4": {
-                "url": "src/imgs/answer-5-4.png",
-                "txt": "I don't know yet.",
-                "price": 1750
-            }
-        }
-    },
-    "page-6": {
-        "title": "Does your App have to be integrated with a website?",
-        "num": 6,
-        "options": {
-            "6.1": {
-                "url": "src/imgs/answer-6-1.png",
-                "txt": "Yes",
-                "price": 1000
-            },
-            "6.2": {
-                "url": "src/imgs/answer-6-2.png",
-                "txt": "No",
-                "price": 0
-            },
-            "6.3": {
-                "url": "src/imgs/answer-6-3.png",
-                "txt": "I don't know",
-                "price": 750
-            }
-        }
-    },
-    "page-7": {
-        "title": "Do users have their own profiles?",
-        "num": 7,
-        "options": {
-            "7.1": {
-                "url": "src/imgs/answer-7-1.png",
-                "txt": "Yes",
-                "price": 1000
-            },
-            "7.2": {
-                "url": "src/imgs/answer-7-2.png",
-                "txt": "No",
-                "price": 500
-            },
-            "7.3": {
-                "url": "src/imgs/answer-7-3.png",
-                "txt": "I don't know",
-                "price": 750
-            }
-        }
-    },
-    "page-8": {
-        "title": "Your app needs an administration panel?",
-        "num": 8,
-        "options": {
-            "8.1": {
-                "url": "src/imgs/answer-8-1.png",
-                "txt": "Yes",
-                "price": 1000
-            },
-            "8.2": {
-                "url": "src/imgs/answer-8-2.png",
-                "txt": "No",
-                "price": 0
-            },
-            "8.3": {
-                "url": "src/imgs/answer-8-3.png",
-                "txt": "I don't know",
-                "price": 750
-            }
-        }
-    },
-    "page-9": {
-        "title": "What languages will your app use?",
-        "num": 9,
-        "options": {
-            "9.1": {
-                "url": "src/imgs/answer-9-1.png",
-                "txt": "A single language",
-                "price": 700
-            },
-            "9.2": {
-                "url": "src/imgs/answer-9-2.png",
-                "txt": "Bilingual",
-                "price": 1400
-            },
-            "9.3": {
-                "url": "src/imgs/answer-9-3.png",
-                "txt": "Multilingual",
-                "price": 3000
-            }
-        }
-    },
-    "page-10": {
-        "title": "What is your project in?",
-        "num": 10,
-        "options": {
-            "10.1": {
-                "url": "src/imgs/answer-10-1.png",
-                "txt": "It's just an idea.",
-                "price": 3000
-            },
-            "10.2": {
-                "url": "src/imgs/answer-10-2.png",
-                "txt": "Sketch already prepared",
-                "price": 2500
-            },
-            "10.3": {
-                "url": "src/imgs/answer-10-3.png",
-                "txt": "Developmental app",
-                "price": 1500
-            },
-            "10.4": {
-                "url": "src/imgs/answer-10-4.png",
-                "txt": "App already developed",
-                "price": 1000
-            }
-        }
+  "page-1": {
+    "title": "What level of quality are you looking for?",
+    "num": 1,
+    "options": {
+      "1.1": {
+        "url": "/assets/imgs/answer-1-1.png",
+        "txt": "Optimal quality",
+        "price": 0,
+        "multiplier": 3
+      },
+      "1.2": {
+        "url": "/assets/imgs/answer-1-2.png",
+        "txt": "Good value for money",
+        "price": 0,
+        "multiplier": 2
+      },
+      "1.3": {
+        "url": "/assets/imgs/answer-1-3.png",
+        "txt": "The quality doesn't matter",
+        "price": 0,
+        "multiplier": 1
+      }
     }
+  },
+  "page-2": {
+    "title": "What kind of app do you need?",
+    "num": 2,
+    "options": {
+      "2.1": {
+        "url": "/assets/imgs/answer-2-1.png",
+        "txt": "Android app",
+        "price": 1000
+      },
+      "2.2": {
+        "url": "/assets/imgs/answer-2-2.png",
+        "txt": "iOS application",
+        "price": 1000
+      },
+      "2.3": {
+        "url": "/assets/imgs/answer-2-3.png",
+        "txt": "Windows Phone app",
+        "price": 1000
+      },
+      "2.4": {
+        "url": "/assets/imgs/answer-2-4.png",
+        "txt": "Android app - iOS ",
+        "price": 1500
+      },
+      "2.5": {
+        "url": "/assets/imgs/answer-2-5.png",
+        "txt": "Desktop app",
+        "price": 0
+      }
+    }
+  },
+  "page-2.1": {
+    "title": "What kind of desktop app do you need?",
+    "num": 2.1,
+    "options": {
+      "2.1.1": {
+        "url": "/assets/imgs/answer-2_1-1.png",
+        "txt": "Native app",
+        "price": 1000
+      },
+      "2.1.2": {
+        "url": "/assets/imgs/answer-2_1-2.png",
+        "txt": "Single page app",
+        "price": 1500
+      },
+      "2.1.3": {
+        "url": "/assets/imgs/answer-2_1-3.png",
+        "txt": "Progressive Web App",
+        "price": 2000
+      }
+    }
+  },
+  "page-3": {
+    "title": "What design do you want your app to have?",
+    "num": 3,
+    "options": {
+      "3.1": {
+        "url": "/assets/imgs/answer-3-1.png",
+        "txt": "Simple interface",
+        "price": 1200
+      },
+      "3.2": {
+        "url": "/assets/imgs/answer-3-2.png",
+        "txt": "Customized interface",
+        "price": 2000
+      },
+      "3.3": {
+        "url": "/assets/imgs/answer-3-3.png",
+        "txt": "Replicated web interface",
+        "price": 1500
+      },
+      "3.4": {
+        "url": "/assets/imgs/answer-3-4.png",
+        "txt": "I don't need design",
+        "price": 1000
+      }
+    }
+  },
+  "page-4": {
+    "title": "How do you want to benefit from your App?",
+    "num": 4,
+    "options": {
+      "4.1": {
+        "url": "/assets/imgs/answer-4-1.png",
+        "txt": "Free application with advertising",
+        "price": 1000
+      },
+      "4.2": {
+        "url": "/assets/imgs/answer-4-2.png",
+        "txt": "Payment application",
+        "price": 1500
+      },
+      "4.3": {
+        "url": "/assets/imgs/answer-4-3.png",
+        "txt": "Shopping inside the app",
+        "price": 2000
+      },
+      "4.4": {
+        "url": "/assets/imgs/answer-4-4.png",
+        "txt": "I don't know yet",
+        "price": 1750
+      }
+    }
+  },
+  "page-5": {
+    "title": "Does your app need a login system?",
+    "num": 5,
+    "options": {
+      "5.1": {
+        "url": "/assets/imgs/answer-5-1.png",
+        "txt": "Yes, with social media and email",
+        "price": 2000
+      },
+      "5.2": {
+        "url": "/assets/imgs/answer-5-2.png",
+        "txt": "Yes, with email.",
+        "price": 1500
+      },
+      "5.3": {
+        "url": "/assets/imgs/answer-5-3.png",
+        "txt": "No, not",
+        "price": 0
+      },
+      "5.4": {
+        "url": "/assets/imgs/answer-5-4.png",
+        "txt": "I don't know yet.",
+        "price": 1750
+      }
+    }
+  },
+  "page-6": {
+    "title": "Does your App have to be integrated with a website?",
+    "num": 6,
+    "options": {
+      "6.1": {
+        "url": "/assets/imgs/answer-6-1.png",
+        "txt": "Yes",
+        "price": 1000
+      },
+      "6.2": {
+        "url": "/assets/imgs/answer-6-2.png",
+        "txt": "No",
+        "price": 0
+      },
+      "6.3": {
+        "url": "/assets/imgs/answer-6-3.png",
+        "txt": "I don't know",
+        "price": 750
+      }
+    }
+  },
+  "page-7": {
+    "title": "Do users have their own profiles?",
+    "num": 7,
+    "options": {
+      "7.1": {
+        "url": "/assets/imgs/answer-7-1.png",
+        "txt": "Yes",
+        "price": 1000
+      },
+      "7.2": {
+        "url": "/assets/imgs/answer-7-2.png",
+        "txt": "No",
+        "price": 500
+      },
+      "7.3": {
+        "url": "/assets/imgs/answer-7-3.png",
+        "txt": "I don't know",
+        "price": 750
+      }
+    }
+  },
+  "page-8": {
+    "title": "Your app needs an administration panel?",
+    "num": 8,
+    "options": {
+      "8.1": {
+        "url": "/assets/imgs/answer-8-1.png",
+        "txt": "Yes",
+        "price": 1000
+      },
+      "8.2": {
+        "url": "/assets/imgs/answer-8-2.png",
+        "txt": "No",
+        "price": 0
+      },
+      "8.3": {
+        "url": "/assets/imgs/answer-8-3.png",
+        "txt": "I don't know",
+        "price": 750
+      }
+    }
+  },
+  "page-9": {
+    "title": "What languages will your app use?",
+    "num": 9,
+    "options": {
+      "9.1": {
+        "url": "/assets/imgs/answer-9-1.png",
+        "txt": "A single language",
+        "price": 700
+      },
+      "9.2": {
+        "url": "/assets/imgs/answer-9-2.png",
+        "txt": "Bilingual",
+        "price": 1400
+      },
+      "9.3": {
+        "url": "/assets/imgs/answer-9-3.png",
+        "txt": "Multilingual",
+        "price": 3000
+      }
+    }
+  },
+  "page-10": {
+    "title": "What is your project in?",
+    "num": 10,
+    "options": {
+      "10.1": {
+        "url": "/assets/imgs/answer-10-1.png",
+        "txt": "It's just an idea.",
+        "price": 3000
+      },
+      "10.2": {
+        "url": "/assets/imgs/answer-10-2.png",
+        "txt": "Sketch already prepared",
+        "price": 2500
+      },
+      "10.3": {
+        "url": "/assets/imgs/answer-10-3.png",
+        "txt": "Developmental app",
+        "price": 1500
+      },
+      "10.4": {
+        "url": "/assets/imgs/answer-10-4.png",
+        "txt": "App already developed",
+        "price": 1000
+      }
+    }
+  }
 }

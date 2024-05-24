@@ -88,7 +88,7 @@ export class pagePrice extends LitElement {
         </div>
         <section class="intro">
             <span class="page-txt">The estimated cost of your app is</span>
-            <img src="../src/imgs/gods.PNG" alt="" class="dioses">
+            <img src="/assets/imgs/gods.PNG" alt="" class="dioses">
             <div class="price">${this.pagePrice}</div>
             <a class="create">Create your proyect</a>
             

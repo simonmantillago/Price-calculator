@@ -65,7 +65,7 @@ export class pageIntro extends LitElement {
     render(){
         return html`
         <section class="intro">
-            <img class="intro-image" src="../src/imgs/intro.png" alt="">
+            <img class="intro-image" src="/assets/imgs/intro.png" alt="">
             <h1 class="title">How much does it cost to develop my <strong>app</strong>?</h1>
             <p class="subtitle">Calculate the cost to create your app by answering these simple questions.</p>
             <button class="start-button">Start</button>
