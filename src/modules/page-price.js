@@ -20,13 +20,13 @@ export class pagePrice extends LitElement {
             background-color: #3d3935 !important;
             font-family: 'Poppins' !important;
             color: #fff !important ;   
-            overflow-x: hidden;
+            overflow: hidden;
         }
         .intro{
             display:flex;
             flex-direction: column;
             justify-content: center;
-            height: 100vh;
+            height: 90vh;
             gap: 0
         }
         .create{
@@ -60,12 +60,11 @@ export class pagePrice extends LitElement {
         
         .top-line{ 
             display: flex;
-            
+            padding-top: 30px;
             font-weight: 400;
             align-items: center;
             justify-content: space-between;
             padding-inline:30px ;
-            font-size:1vw;
             }
         .dioses{
             width:20vw;
@@ -83,10 +82,11 @@ export class pagePrice extends LitElement {
     
     render(){
         return html`
+        
+        <div class="top-line">
+            <a class="startAgain">← Start again</a>    
+        </div>
         <section class="intro">
-            <div class="top-line">
-                <a class="startAgain">← Start again</a>    
-            </div>
             <span class="page-txt">The estimated cost of your app is</span>
             <img src="../src/imgs/gods.PNG" alt="" class="dioses">
             <div class="price">${this.pagePrice}</div>
