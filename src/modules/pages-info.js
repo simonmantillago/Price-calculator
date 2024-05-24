@@ -9,7 +9,7 @@ export class pageOption extends LitElement {
         this.page = 'page-1'; // Inicializa la propiedad name
         this.pageData={};
         this.pageAtributes=[];
-            this.Totalprice=0;
+        this.Totalprice=0;
         };
         //estilos de cada web component
         static styles = css` 
