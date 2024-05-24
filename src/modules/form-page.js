@@ -224,7 +224,7 @@ export class pageForm extends LitElement {
             });
 
             if (!isValid) {
-                alert('Por favor, llene todos los campos.');
+                alert('Please fill all fields.');
                 return;
             }
 
