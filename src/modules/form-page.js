@@ -18,7 +18,7 @@ export class pageForm extends LitElement {
             width: 40vw;
             height: 60vh;
             right: 30vw;
-            top: 30vh;
+            top: 20vh;
             background-color: #101010;
             border-radius: 50px;
             z-index: 2;
